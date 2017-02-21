@@ -36,7 +36,7 @@ preAlgoNames=names.preAlgoNames;
 numOfPreAlgoNames=length(preAlgoNames);
 
 maxSilh=0;
-minK=6; maxK=20;
+minK=5; maxK=20;
 optimalK=minK;
 isSkew=0;
 
@@ -47,7 +47,7 @@ numOfDistances=length(distances);
 preName=name;
 distance_P=2;
 
-maxFea=floor(nFea/5);
+maxFea=floor(nFea/3);
 for p=1:numOfDistances
     if strcmp(distances{p},'cityblock')==1
         distance_P=1;
@@ -98,7 +98,7 @@ for p=1:numOfDistances
 
                         [silh,iterSilh] = ClusterAlgos(cluAlgoName,pFea,numOfCls,times,k_ocurrence,feature,distances{p});
 
-                        disp(silh);
+%                         disp(silh);
                         if silh>maxSilh
                             maxSilh=silh;
                             optimalK=k;
@@ -144,7 +144,7 @@ end %numOfDistanceP
 % preprocess end....
 
 save(strcat(resName,'.mat'),'res');
-fprintf('\n-----------------------------------------\noptimalK=%d, maxSilh=%f \n',optimalK,maxSilh);
+fprintf('\noptimalK=%d, maxSilh=%f \n-----------------------------------------\n',optimalK,maxSilh);
 % isSave=1;
 % idk=18;
 % [res ]=LPP_KmeanswithHubcluster( feature,fea,idk,K ,label,loadDataName,isSave,times);

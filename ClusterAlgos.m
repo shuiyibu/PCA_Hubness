@@ -25,8 +25,8 @@ for i=1:times
         for j=1:rep
             st(:,:,j) =start;
         end
-        [IDX,C] =kmeans(pFea,numOfCls,'Start',st,'Distance',distance);
-        %GHPKM(pFea,numOfCls,k_ocurrence,'start',st,'Distance',distance);
+        %[IDX,C] =kmeans(pFea,numOfCls,'Start',st,'Distance',distance);
+        [IDX,C] =GHPKM(pFea,numOfCls,k_ocurrence,'start',st,'distance',distance);
 
     end
 
