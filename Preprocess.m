@@ -1,4 +1,5 @@
 function [] = Preprocess( loadDataPath,loadDataName,names )
+
 addpath(genpath(pwd));
 
 %load data
@@ -36,7 +37,7 @@ preAlgoNames=names.preAlgoNames;
 numOfPreAlgoNames=length(preAlgoNames);
 
 maxSilh=0;
-minK=5; maxK=20;
+minK=12; maxK=12;
 optimalK=minK;
 isSkew=0;
 
